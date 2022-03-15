@@ -1,17 +1,24 @@
-let title 
-let screens 
-let screenPrice
-let rollback 
-let fullPrice 
-let adaptive 
+let title = 'строка с названием проекта';
+let screens = 'Простые, Сложные, Интерактивные';
+let screenPrice = 1234
+let rollback = Math.round(Math.random()*100);
+let fullPrice = Math.round(Math.random()*10000);
+let adaptive = Boolean(Math.round(Math.random()));
 
-console.log(title)
-console.log(screens)
-console.log(screenPrice)
-console.log(rollback)
-console.log(fullPrice)
-console.log(adaptive)
+let newScreens = screens.toLowerCase();
+let newNewScreens = newScreens.split(", ");
 
-console.log('все работает но неопределено')
+
+console.log(title, fullPrice, adaptive);
+console.log(screens.length);
+console.log('Стоимость верстки экранов ' + screenPrice + '$ ' + 'Стоимость разработки сайта ' + fullPrice + '$');
+
+console.log(newNewScreens);
+
+console.log(fullPrice * (rollback/100));
+
+
+
+// console.log('все работает но неопределено')
 
 alert('пока не работает надо закрыть')
