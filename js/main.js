@@ -1,31 +1,22 @@
 'use strict'
 
-const DomElement = function(selector,height,width,bg,fontSize) {
-    this.selector = selector,
-    this.height = height,
-    this.width = width,
-    this.bg = bg,
-    this.fontSize = fontSize
+class First {
+    constructor() {}
+        hello() {
+            console.log('Привет я метод родителя!');
+        }
 }
 
-DomElement.prototype.newElem = function() {
-    let newElement
-    if (this.selector[0] === '.') {
-        newElement = document.createElement('div')
-        newElement.className = this.selector.slice(1)
-        
-    } else if (this.selector[0] === '#') {
-        newElement = document.createElement('p')
-        newElement.id = this.selector.slice(1)
+class Second extends First {
+    constructor() {
+        super()
     }
-    newElement.style.cssText = `height: ${this.height}px; width: ${this.width}px; background-color: ${this.bg}; font-size: ${this.fontSize}px;`
-    return newElement
+    hello() {
+        super.hello()
+        console.log('А я наследуемый метод!');
+    }
 }
 
-let newElement1 = new DomElement('.block', 100, 100, 'red', 12)
-let newElement2 = new DomElement('#block', 100, 100, 'red', 12)
+const hell = new Second()
 
-document.body.append(newElement1.newElem())
-document.body.append(newElement2.newElem())
-
-console.log(newElement)
+hell.hello()
